@@ -3,20 +3,25 @@
   flex-direction: column;
 }
 
-.inputClass {
+.input {
   max-width: 200px;
   border: 1px solid #828282;
   padding: 1rem;
   border-radius: 8px;
 }
-.inputClass:hover{
+.input:hover{
   border-color: #333333;
 }
-.inputClass:focus {
+.input:focus {
   outline: none;
   border: 1px solid blue;
 }
 
 .inputDefaultColor{
   color: blue;
+}
+
+.startIcon{
+  position: absolute;
+  background-color: red;
 }
