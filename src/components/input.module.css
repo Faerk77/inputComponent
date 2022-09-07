@@ -1,0 +1,22 @@
+.inputLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputClass {
+  max-width: 200px;
+  border: 1px solid #828282;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.inputClass:hover{
+  border-color: #333333;
+}
+.inputClass:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+.inputDefaultColor{
+  color: blue;
+}
