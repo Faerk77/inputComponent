@@ -9,7 +9,7 @@
   padding: 1rem;
   border-radius: 8px;
 }
-.input:hover{
+.input:hover {
   border-color: #333333;
 }
 .input:focus {
@@ -17,11 +17,10 @@
   border: 1px solid blue;
 }
 
-.inputDefaultColor{
+.inputDefaultColor {
   color: blue;
 }
 
-.startIcon{
-  position: absolute;
-  background-color: red;
+.startIcon {
+  color: gray;
 }

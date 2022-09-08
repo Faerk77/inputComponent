@@ -3,7 +3,7 @@ import style from './input.module.css';
 const Input = ({
   text,
   type,
-  iconWidth = "1rem",
+  iconWidth = "1.5rem",
   error,
   startIcon: StartIcon,
   endIcon: EndIcon,
@@ -17,8 +17,7 @@ const Input = ({
     <label className={`${labelClass}`}>
       {text && <span>{text}</span>}
       <div>
-      {<StartIcon className={style.startIcon} width={iconWidth}/>}
-      {<StartIcon width={iconWidth}/>}
+      {StartIcon && <StartIcon className={style.startIcon} width={iconWidth}/>}
       <input className={inputClass} {...props} />
       </div>
     </label>
