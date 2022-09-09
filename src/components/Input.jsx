@@ -3,8 +3,9 @@ import style from './input.module.css';
 const Input = ({
   text,
   type,
-  iconWidth = "1.5rem",
+  iconWidth = '2rem',
   error,
+  helperText,
   startIcon: StartIcon,
   endIcon: EndIcon,
   fullWidth,
@@ -14,12 +15,29 @@ const Input = ({
   const inputClass = style['input'];
 
   return (
-    <label className={`${labelClass}`}>
+    <label className={`${labelClass} ${error && style['inputLabelError']}`}>
       {text && <span>{text}</span>}
-      <div>
-      {StartIcon && <StartIcon className={style.startIcon} width={iconWidth}/>}
-      <input className={inputClass} {...props} />
+      <div className={`${style['inputContainer']}`}>
+        {StartIcon && (
+        <span className={style.startIcon}> 
+          <StartIcon  width={iconWidth} />
+          </span>
+        )}
+        {EndIcon && <EndIcon className={style.endIcon} width={iconWidth} />}
+        <input
+          className={`${inputClass} ${error ? style['inputError'] : ''}`}
+          {...props}
+        />
       </div>
+      {helperText && (
+        <span
+          className={`${style['helperTextDefault']} ${
+            error && style['helperTextError']
+          }`}
+        >
+          {helperText}
+        </span>
+      )}
     </label>
   );
 };

@@ -1,6 +1,14 @@
+.inputContainer{
+  position: relative;
+}
 .inputLabel {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
+}
+
+.inputLabelError{
+  color: red;
 }
 
 .input {
@@ -9,6 +17,7 @@
   padding: 1rem;
   border-radius: 8px;
 }
+
 .input:hover {
   border-color: #333333;
 }
@@ -17,10 +26,30 @@
   border: 1px solid blue;
 }
 
-.inputDefaultColor {
-  color: blue;
-}
-
-.startIcon {
+.startIcon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
   color: gray;
 }
+
+.input[disabled] {
+  background-color: #f2f2f2;
+  border: initial;
+}
+
+.inputError,.inputError:focus {
+  border-color: red;
+}
+
+.helperTextDefault{
+  font-size: 0.65rem;
+  color: gray;
+}
+
+.helperTextError{
+  color: red;
+}
+
+
