@@ -12,7 +12,7 @@ function App() {
         <h1 className="title">Inputs</h1>
       </header>
       <Input
-        type="Text"
+        type="text"
         text="Label"
         placeholder="Placeholder"
         value={input}
@@ -20,28 +20,40 @@ function App() {
           setInput(ev.target.value);
         }}
       />
-      <Input type="Text" text="Label" placeholder="Placeholder" error />
-      <Input type="Text" text="Label" placeholder="Placeholder" disabled />
+      <Input type="text" text="Label" placeholder="Placeholder" error />
+      <Input type="text" text="Label" placeholder="Placeholder" disabled />
       <Input
-        type="Text"
+        type="text"
         text="Label"
         helperText="Some interesting text"
         placeholder="Placeholder"
         error
       />
       <Input
-        type="Text"
+        type="text"
         text="Label"
         placeholder="Placeholder"
         startIcon={Icon}
       />
       <Input
-        type="Text"
+        type="text"
         text="Label"
         placeholder="Placeholder"
         endIcon={Icon}
       />
-      <Input multiline cols="8" row="8" />
+      <Input
+        placeholder="Placeholder"
+        text="Label"
+        multiline
+        cols="25"
+        rows="4"
+      />
+
+      <footer className="footer">
+        <p>
+        created by Fernando Yañez - devChallenges.io
+        </p>
+      </footer>
     </div>
   );
 }

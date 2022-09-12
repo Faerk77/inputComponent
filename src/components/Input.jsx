@@ -3,7 +3,7 @@ import style from './input.module.css';
 const Input = ({
   text,
   type,
-  iconWidth = '2rem',
+  iconWidth = '1.8rem',
   error,
   helperText,
   startIcon: StartIcon,
@@ -15,27 +15,33 @@ const Input = ({
   const labelClass = style['inputLabel'];
   const inputClass = style['input'];
   const inputContainer = style['inputContainer'];
+  const labelText = error
+    ? style['inputLabelError']
+    : style['inputLabelDefault'];
+  const inputFullWidth = fullWidth ? style.fullWidth : '';
 
-if(multiline){
-  return(
-    <div>
-        <textarea name="Text">{text}</textarea>
-    </div>
-  )
-}
+  const styled = StartIcon ? { paddingLeft: `calc(1rem + ${iconWidth}` } : {};
+
+  if (multiline) {
+    return (
+      <label className={`${labelClass}`}>
+        {text && <span className={labelText}>{text}</span>}
+        <textarea className={style.textArea} {...props} name="Text"></textarea>
+      </label>
+    );
+  }
 
   return (
-    <label className={`${labelClass} ${error && style['inputLabelError']}`}>
-      {text && <span>{text}</span>}
+    <label className={`${labelClass} ${labelText} ${inputFullWidth}`}>
+      {text && <span className={labelText}>{text}</span>}
       <div className={`${inputContainer}`}>
         {StartIcon && (
-        <span className={style.startIcon}> 
-          <StartIcon  width={iconWidth} />
-          </span>
+          <StartIcon width={iconWidth} className={style.startIcon} />
         )}
-        {EndIcon && <EndIcon className={style.endIcon} width={iconWidth} />}
+        {EndIcon && <EndIcon width={iconWidth} className={style.endIcon} />}
         <input
           className={`${inputClass} ${error ? style['inputError'] : ''}`}
+          style={styled}
           {...props}
         />
       </div>

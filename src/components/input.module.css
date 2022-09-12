@@ -1,18 +1,31 @@
 .inputContainer{
+  width: 100%;
   position: relative;
 }
+
 .inputLabel {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  width: 200px;
+  display: block;
 }
 
-.inputLabelError{
+.fullWidth{
+  width: 100%;
+}
+
+.inputLabel:hover{
+  color: black;
+}
+
+.inputLabelDefault:focus-within{
+  color: blue;
+}
+
+.inputLabelError:focus-within{
   color: red;
 }
 
 .input {
-  max-width: 200px;
+  width: 100%;
   border: 1px solid #828282;
   padding: 1rem;
   border-radius: 8px;
@@ -21,17 +34,24 @@
 .input:hover {
   border-color: #333333;
 }
-.input:focus {
+.input:focus{
   outline: none;
   border: 1px solid blue;
 }
 
-.startIcon{
+.startIcon,.endIcon{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 1rem;
   color: gray;
+}
+
+.endIcon{
+ right: 0.5rem;
+}
+
+.startIcon{
+  left: 0.5rem;
 }
 
 .input[disabled] {
@@ -50,6 +70,13 @@
 
 .helperTextError{
   color: red;
+}
+
+.textArea{
+  display: block;
+  resize: none;
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 
