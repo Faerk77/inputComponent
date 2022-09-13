@@ -9,13 +9,17 @@
   display: block;
 }
 
-.inputLabel:hover, .inputLabelError:hover{
-  color: black;
-}
 .inputLabelError{
   color: red;
 }
 
+.inputLabel:hover{
+  color: black;
+}
+
+.inputLabel:hover .input{
+  border-color: black;
+}
 
 .inputLabelDefault:focus-within{
   color: blue;
@@ -30,6 +34,7 @@
   border: 1px solid #828282;
   border-radius: 8px;
 }
+
 .sm{
 padding: 0.5rem;
 }
@@ -37,10 +42,11 @@ padding: 0.5rem;
 .md{
   padding: 1rem;
 }
-
+/*
 .input:hover {
   border-color: #333333;
 }
+*/
 .input:focus{
   outline: none;
   border: 1px solid blue;

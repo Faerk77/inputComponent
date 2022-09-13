@@ -36,7 +36,7 @@ const Input = ({
 
   return (
     <label className={`${labelClass} ${labelText} ${inputFullWidth}`}>
-      {text && <span style={inputGap} className={`${labelText}`}>{text}</span>}
+      {text && <span style={inputGap}>{text}</span>}
       <div className={`${inputContainer}`}>
         {StartIcon && (
           <StartIcon width={iconWidth} className={style.startIcon} />
