@@ -2,7 +2,20 @@
   box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
 }
+.title {
+  text-align: center;
+}
+.main {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 70%;
+}
 
 .footer {
+  text-align: center;
   color: gray;
 }

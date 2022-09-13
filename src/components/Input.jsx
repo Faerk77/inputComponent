@@ -6,6 +6,7 @@ const Input = ({
   iconWidth = '1.8rem',
   error,
   helperText,
+  size = 'md',
   startIcon: StartIcon,
   endIcon: EndIcon,
   fullWidth,
@@ -20,7 +21,9 @@ const Input = ({
     : style['inputLabelDefault'];
   const inputFullWidth = fullWidth ? style.fullWidth : '';
 
-  const styled = StartIcon ? { paddingLeft: `calc(1rem + ${iconWidth}` } : {};
+  const inputGap = {display: 'block', marginBottom: '0.5rem'}
+
+  const styled = StartIcon ? { paddingLeft: `calc(1rem + ${iconWidth}`} : {};
 
   if (multiline) {
     return (
@@ -33,14 +36,16 @@ const Input = ({
 
   return (
     <label className={`${labelClass} ${labelText} ${inputFullWidth}`}>
-      {text && <span className={labelText}>{text}</span>}
+      {text && <span style={inputGap} className={`${labelText}`}>{text}</span>}
       <div className={`${inputContainer}`}>
         {StartIcon && (
           <StartIcon width={iconWidth} className={style.startIcon} />
         )}
         {EndIcon && <EndIcon width={iconWidth} className={style.endIcon} />}
         <input
-          className={`${inputClass} ${error ? style['inputError'] : ''}`}
+          className={`${inputClass} ${error ? style['inputError'] : ''} ${
+            style[size]
+          }`}
           style={styled}
           {...props}
         />
